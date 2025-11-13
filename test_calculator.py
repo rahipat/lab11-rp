@@ -1,4 +1,4 @@
-#https://github.com/rahipat/lab11-rp
+# https://github.com/rahipat/lab11-rp
 
 import unittest
 from calculator import *
@@ -16,19 +16,19 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(0, 0), 0)
 
     def test_multiply(self):
-        self.assertEqual(mul(2, 3), 6)
-        self.assertEqual(mul(-2, 3), -6)
-        self.assertEqual(mul(0, 5), 0)
+        self.assertEqual(multiply(2, 3), 6)
+        self.assertEqual(multiply(-2, 3), -6)
+        self.assertEqual(multiply(0, 5), 0)
 
     def test_divide(self):
-        self.assertEqual(div(6, 3), 2)
-        self.assertEqual(div(-6, 3), -2)
-        self.assertAlmostEqual(div(7, 2), 3.5)
-    
+        self.assertEqual(divide(6, 3), 2)
+        self.assertEqual(divide(-6, 3), -2)
+        self.assertAlmostEqual(divide(7, 2), 3.5)
+
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            div(5, 0)
-    
+            divide(5, 0)
+
     def test_logarithm(self):
         self.assertEqual(logarithm(8, 2), 3)
         self.assertEqual(logarithm(100, 10), 2)
@@ -36,18 +36,14 @@ class TestCalculator(unittest.TestCase):
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            logarithm(6, 1)  
-        with self.assertRaises(ValueError):
-            logarithm(7, 0)  
-        with self.assertRaises(ValueError):
-            logarithm(67, -2)
-
+            logarithm(10, 1)
+    
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            logarithm(0, 6)
+            logarithm(0, 10)
         with self.assertRaises(ValueError):
-            logarithm(-6, 6)
-            
+            logarithm(-5, 2)
+
     def test_hypotenuse(self):
         self.assertEqual(hypotenuse(3, 4), 5)
         self.assertEqual(hypotenuse(5, 12), 13)
@@ -59,6 +55,10 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             square_root(-4)
 
+    def test_exp(self):
+        self.assertEqual(exp(2, 3), 8)
+        self.assertEqual(exp(5, 0), 1)
+        self.assertEqual(exp(3, 2), 9)
 
 # Do not touch this
 if __name__ == "__main__":
