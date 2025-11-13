@@ -38,5 +38,5 @@ def hypotenuse(a,b):
 def square_root(a):
     if a < 0:
         raise ValueError("The number has to positive.")
-    return math.sqrt(a)
+    return round(math.sqrt(a), 4)
 
